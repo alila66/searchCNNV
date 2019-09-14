@@ -2,7 +2,7 @@ const config = require('./config')
 const puppeteer = require('puppeteer')
 // const devices = require('puppeteer/DeviceDescriptors')
 
-async function searchCNNV () {
+module.exports = async function searchCNNV () {
   console.log(new Date() + ': start...')
 
   const browser = await puppeteer.launch({
@@ -43,8 +43,6 @@ async function searchCNNV () {
   // await page.screenshot({ path: 'douban.png' });
 
   await browser.close()
-  console.log(new Date() + 'ended!!!\n')
+  console.log(new Date() + ': ended!!!\n')
   return bodyHTML
 }
-
-module.exports = searchCNNV
