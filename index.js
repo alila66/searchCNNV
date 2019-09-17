@@ -1,6 +1,6 @@
 const {dbOpen, dbClose} = require('./db')
 const {saveData} = require('./models/CnnvModel');
-const parseHtml = require('./parseHtml');
+const parseHtml = require('./parseHTML');
 
 !(async () => {
     try {
