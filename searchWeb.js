@@ -9,7 +9,7 @@ module.exports = async function searchCNNV () {
     // headless: false,
     // executablePath: './chrome-mac/Chromium.app/Contents/MacOS/Chromium',
     args: ['--no-sandbox'],
-    slowMo: 2000 // slow down by 250ms
+    slowMo: 2500 // slow down by 250ms
   })
 
   console.log(new Date() + ': browser launched!')
