@@ -2,8 +2,9 @@ const mongoose = require('mongoose')
 // const Schema = mongoose.Schema;
 
 const cnnvSchema = new mongoose.Schema({
-    rows: {},
-    level: {},
+    title: {},
+    showinfo: {},
+    uri: {},
     date: { type: Date, default: Date.now },
     flag: { type: Boolean, default: true },
     meta: {
@@ -14,7 +15,7 @@ const cnnvSchema = new mongoose.Schema({
 
 // cnnvSchema.set('autoIndex', false)
 
-const CnnvModel = mongoose.model('cnnv2s', cnnvSchema)
+const CnnvModel = mongoose.model('cnnvs', cnnvSchema)
 
 function saveData(data) {
     const cnnv = new CnnvModel({
