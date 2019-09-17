@@ -1,15 +1,11 @@
 const mongoose = require('mongoose')
-const DB_USER = 'admin'
-const DB_PWD = 'xjkj123'
-const DB_HOST = '127.0.0.1'
-const DB_NAME = 'admin'
-
+const config = require('../config')
 
 async function dbOpen() {
     // console.log(`mongodb://${DB_USER}:${DB_PWD}@${DB_HOST}/${DB_NAME}`)
     try {
         // mongoose.connect(`mongodb://admin:xjkj123@127.0.0.1/admin`, { useNewUrlParser: true });
-        mongoose.connect(`mongodb://${DB_USER}:${DB_PWD}@${DB_HOST}/${DB_NAME}`, { useNewUrlParser: true });
+        mongoose.connect(`mongodb://${config.DB_USER}:${config.DB_PWD}@${config.DB_HOST}/${config.DB_NAME}`, { useNewUrlParser: true });
 
     } catch {
         console.log('connecting error!')
