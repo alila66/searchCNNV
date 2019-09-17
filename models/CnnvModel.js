@@ -2,9 +2,9 @@ const mongoose = require('mongoose')
 // const Schema = mongoose.Schema;
 
 const cnnvSchema = new mongoose.Schema({
-    title: String,
-    showinfo: String,
-    uri: String,
+    title: { type: String},
+    showinfo: { type: String},
+    uri: { type: String},
     date: { type: Date, default: Date.now },
     flag: { type: Boolean, default: true },
     meta: {
