@@ -2,9 +2,9 @@ const mongoose = require('mongoose')
 // const Schema = mongoose.Schema;
 
 const cnnvSchema = new mongoose.Schema({
-    title: {},
-    showinfo: {},
-    uri: {},
+    title: String,
+    showinfo: String,
+    uri: String,
     date: { type: Date, default: Date.now },
     flag: { type: Boolean, default: true },
     meta: {
@@ -18,12 +18,12 @@ const cnnvSchema = new mongoose.Schema({
 const CnnvModel = mongoose.model('cnnvs', cnnvSchema)
 
 function saveData(data) {
-    const cnnv = new CnnvModel({
-        title: data.title,
-        showinfo: data.showinfo,
-        uri: data.uri,
-    })
-    return cnnv.save();
+    // const cnnv = new CnnvModel({
+    //     title: data.title,
+    //     showinfo: data.showinfo,
+    //     uri: data.uri,
+    // })
+    return CnnvModel.insertMany(data);
 }
 
 module.exports = {saveData };

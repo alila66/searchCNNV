@@ -23,16 +23,16 @@ module.exports = async function parseHtml() {
     const uri = getValueFromCheerio(rowa, 'href')
     const showinfo = getValueFromCheerio(rowspan, 'class')
 
-    return {
-        title,
-        showinfo,
-        uri
+    let result = []
+
+    for (let i = 0; i < title.length; i++) {
+        result[i] = new Object()
+        result[i].title = title[i]
+        result[i].showinfo = showinfo[i]
+        result[i].uri = uri[i]
     }
-    // return {
-    //     rowa,
-    //     rowspan
-    // }
-    // return Promise.resolve({rowa, rowspan})
+
+    return result
 };
 
 // parseHtml().then(console.log);

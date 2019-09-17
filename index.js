@@ -5,6 +5,7 @@ const parseHtml = require('./parseHtml');
 !(async () => {
     try {
         let data = await parseHtml();
+        console.log(data)
         await dbOpen();
         await saveData(data);
         dbClose();
